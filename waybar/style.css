@@ -1,0 +1,84 @@
+@import "colors.css";
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "SF Pro Display", "JetBrainsMono Nerd Font", Helvetica, Arial, sans-serif;
+    font-size: 1rem;
+    min-height: 0;
+}
+
+window#waybar {
+    background: transparent;
+    color: @on_surface;
+    margin: 0;
+}
+
+tooltip {
+    background: @background;
+    border: 1px solid rgba(100, 114, 125, 0.5);
+}
+
+tooltip label {
+    color: @on_surface;
+}
+
+/* ===== WORKSPACES ===== */
+
+#workspaces {
+    padding: 0;
+}
+
+#workspaces button {
+    min-width: 20px;
+    min-height: 0;
+
+    /* Same vertical padding as the other Waybar pills */
+    padding: 1px 8px;
+    margin: 1px 3px;
+
+    /* Smaller workspace text */
+    font-size: 0.75rem;
+
+    border: 2px solid @primary;
+    border-radius: 15px;
+
+    background: transparent;
+    color: @primary;
+
+    box-shadow: none;
+
+    transition:
+        min-width 200ms ease,
+        background-color 200ms ease,
+        color 200ms ease;
+}
+
+#workspaces button:hover {
+    background: alpha(@primary, 0.20);
+    color: @primary;
+}
+
+#workspaces button.active {
+    min-width: 40px;
+
+    padding: 4px 8px;
+
+    border: 2px solid @primary;
+    border-radius: 25px;
+
+    background: @primary;
+    color: #121212;
+}
+
+/* ===== END WORKSPACES ===== */
+
+#clock,
+#pulseaudio,
+#network {
+    padding: 4px 15px;
+    margin: 10px;
+    border-radius: 100px;
+    background-color: @primary;
+    color: #121212;
+}
